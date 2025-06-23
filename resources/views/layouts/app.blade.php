@@ -79,7 +79,7 @@
                     <a href="{{ url('admin/kegiatan') }}" class="nav-link">Kegiatan</a>
                     <a href="{{ url('admin/inventory') }}" class="nav-link">Inventaris</a>
                     <a href="#" class="nav-link">Keuangan</a>
-                    <a href="#" class="nav-link">Anggaran</a>
+                    <a href="{{ url('admin/anggaran') }}" class="nav-link">Anggaran</a>
                     <a href="#" class="nav-link">Pembayaran</a>
                     <a href="#" class="nav-link">Laporan</a>
 

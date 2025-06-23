@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AnggaranController;
 use App\Http\Controllers\Admin\EkstrakurikulerController;
 use App\Http\Controllers\Admin\EkstrakurikulerLaporanController;
 use App\Http\Controllers\Admin\InventarisController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\Siswa\LihatEkskulController;
 use App\Http\Controllers\Siswa\LihatKegiatanController;
 use App\Http\Controllers\Siswa\LihatSiswaController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -148,6 +150,10 @@ Route::middleware(['auth', 'role:admin'])
         Route::get('laporan', [InventoryLaporanController::class, 'preview'])->name('laporan.preview');
         Route::get('laporan/download', [InventoryLaporanController::class, 'download'])->name('laporan.download');
     });
+
+Route::resource('admin/anggaran', AnggaranController::class)
+    ->names('admin.anggaran')
+    ->middleware(['auth', 'role:admin']);
 
 
 // role siswa
