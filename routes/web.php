@@ -3,18 +3,18 @@
 use App\Http\Controllers\Admin\AnggaranController;
 use App\Http\Controllers\Admin\EkstrakurikulerController;
 use App\Http\Controllers\Admin\EkstrakurikulerLaporanController;
-use App\Http\Controllers\Admin\InventarisController;
 use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\InventoryLaporanController;
 use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\KegiatanLaporanController;
+use App\Http\Controllers\Admin\KeuanganController;
 use App\Http\Controllers\Admin\PelatihController;
 use App\Http\Controllers\Admin\PelatihLaporanController;
+use App\Http\Controllers\Admin\PembayaranController;
 use App\Http\Controllers\Admin\PembinaController;
 use App\Http\Controllers\Admin\PembinaLaporanController;
 use App\Http\Controllers\Admin\SiswaController;
 use App\Http\Controllers\Admin\SiswaEkstrakurikulerController;
-use App\Http\Controllers\Admin\SiswaEkstrakurikulerKartuController;
 use App\Http\Controllers\Admin\SiswaEkstrakurikulerLaporanController;
 use App\Http\Controllers\Admin\SiswaLaporanController;
 use App\Http\Controllers\Auth\LoginController;
@@ -23,6 +23,9 @@ use App\Http\Controllers\Siswa\LihatEkskulController;
 use App\Http\Controllers\Siswa\LihatKegiatanController;
 use App\Http\Controllers\Siswa\LihatSiswaController;
 use Illuminate\Support\Facades\Route;
+
+
+
 
 
 
@@ -155,6 +158,13 @@ Route::resource('admin/anggaran', AnggaranController::class)
     ->names('admin.anggaran')
     ->middleware(['auth', 'role:admin']);
 
+Route::resource('admin/keuangan', KeuanganController::class)
+    ->names('admin.keuangan')
+    ->middleware(['auth', 'role:admin']);
+
+Route::resource('admin/pembayaran', PembayaranController::class)
+    ->names('admin.pembayaran')
+    ->middleware(['auth', 'role:admin']);
 
 // role siswa
 Route::middleware(['auth', 'role:siswa'])

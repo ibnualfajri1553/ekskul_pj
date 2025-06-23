@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Keuangan extends Model
 {
+    protected $table = 'keuangan';
     protected $primaryKey = 'id_keuangan';
 
     protected $fillable = ['id_eskul', 'id_anggaran', 'jenis_transaksi', 'tanggal_terima', 'jumlah_anggaran', 'keterangan'];
